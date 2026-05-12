@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Abdullah Trading website" },
+      { name: "description", content: "ForexVision Pro is a premium Forex education and trading platform for learning, community, and market analysis." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Abdullah Trading website" },
+      { property: "og:description", content: "ForexVision Pro is a premium Forex education and trading platform for learning, community, and market analysis." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Abdullah Trading website" },
+      { name: "twitter:description", content: "ForexVision Pro is a premium Forex education and trading platform for learning, community, and market analysis." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/gVSVipR92bV8vY4afUFEq7aFIgG2/social-images/social-1778592916153-trading-financial-logo-trading-icon-candlestick-trading-trading-stock-symbol-market-chart-sign-vector.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/gVSVipR92bV8vY4afUFEq7aFIgG2/social-images/social-1778592916153-trading-financial-logo-trading-icon-candlestick-trading-trading-stock-symbol-market-chart-sign-vector.webp" },
     ],
     links: [
       {
