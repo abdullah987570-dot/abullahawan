@@ -14,12 +14,12 @@ const courses = [
 
 export function Courses() {
   return (
-    <section id="courses" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="courses" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
             <div className="text-xs font-mono text-primary tracking-widest">MARKETPLACE</div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold">
               Learn from <span className="text-gradient">elite traders</span>
             </h2>
           </div>

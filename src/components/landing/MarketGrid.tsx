@@ -25,12 +25,12 @@ function Spark({ pts, up }: { pts: number[]; up: boolean }) {
 
 export function MarketGrid() {
   return (
-    <section id="market" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="market" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-end justify-between mb-10">
           <div>
             <div className="text-xs font-mono text-primary tracking-widest">LIVE MARKET</div>
-            <h2 className="mt-2 font-display text-4xl md:text-5xl font-bold">Real-time forex dashboard</h2>
+            <h2 className="mt-2 font-display text-3xl sm:text-4xl md:text-5xl font-bold">Real-time forex dashboard</h2>
           </div>
           <a className="hidden md:inline text-sm text-muted-foreground hover:text-foreground transition" href="#">
             Open full dashboard →

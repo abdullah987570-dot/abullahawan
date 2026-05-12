@@ -28,11 +28,11 @@ const leaders = [
 
 export function Community() {
   return (
-    <section id="community" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="community" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-12">
           <div className="text-xs font-mono text-primary tracking-widest">COMMUNITY</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             A live feed of <span className="text-gradient">trader minds</span>
           </h2>
         </div>

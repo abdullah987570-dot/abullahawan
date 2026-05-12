@@ -21,11 +21,11 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="pricing" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="text-xs font-mono text-primary tracking-widest">MEMBERSHIP</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Trade <span className="text-gradient">smarter</span>, not harder
           </h2>
           <p className="mt-4 text-muted-foreground">Cancel anytime. Crypto, card and PayPal accepted.</p>

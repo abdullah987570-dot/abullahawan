@@ -12,15 +12,15 @@ const preds = [
 
 export function AIPredictions() {
   return (
-    <section id="ai" className="relative py-24">
+    <section id="ai" className="relative py-16 sm:py-24">
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[400px] bg-accent/10 blur-[120px]" />
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono text-accent tracking-widest">
               <Brain className="h-3.5 w-3.5" /> AI ENGINE · LIVE
             </div>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+            <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold">
               Future market predictions, <span className="text-gradient">powered by AI</span>
             </h2>
             <p className="mt-3 text-muted-foreground max-w-xl">
