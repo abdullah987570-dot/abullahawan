@@ -21,23 +21,23 @@ export function ChartViz() {
   const linePts = candles.map((c, i) => `${i * cw + cw / 2},${scale((c.open + c.close) / 2)}`).join(" ");
 
   return (
-    <div className="glass rounded-3xl p-3 sm:p-5 shadow-card relative overflow-hidden">
-      <div className="flex items-center justify-between mb-4">
+    <div className="glass relative max-w-full overflow-hidden rounded-2xl p-3 shadow-card sm:rounded-3xl sm:p-5">
+      <div className="mb-4 flex items-start justify-between gap-2">
         <div>
           <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-lg">EUR/USD</span>
+            <span className="font-display text-base font-bold sm:text-lg">EUR/USD</span>
             <span className="text-xs font-mono text-muted-foreground">· 1H</span>
           </div>
-          <div className="flex items-baseline gap-3 mt-1">
-            <span className="font-mono text-2xl font-bold">1.0842</span>
+          <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="font-mono text-xl font-bold sm:text-2xl">1.0842</span>
             <span className="text-sm font-mono" style={{ color: "var(--bull)" }}>+0.34%</span>
           </div>
         </div>
-        <div className="flex gap-1 text-xs font-mono flex-wrap justify-end">
+        <div className="flex max-w-[7.5rem] flex-wrap justify-end gap-1 text-[10px] font-mono text-muted-foreground sm:max-w-none sm:text-xs">
           {["1m", "15m", "1H", "4H", "1D"].map((t) => (
             <span
               key={t}
-              className={`px-2 sm:px-2.5 py-1 rounded-md ${
+              className={`rounded-md px-1.5 py-1 sm:px-2.5 ${
                 t === "1H" ? "bg-primary/15 text-primary" : "text-muted-foreground"
               }`}
             >
@@ -47,7 +47,7 @@ export function ChartViz() {
         </div>
       </div>
 
-      <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-[220px] sm:h-[320px]">
+      <svg viewBox={`0 0 ${w} ${h}`} className="h-[210px] w-full sm:h-[320px]">
         <defs>
           <linearGradient id="areaG" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="oklch(0.86 0.24 145)" stopOpacity="0.35" />
@@ -119,7 +119,7 @@ export function ChartViz() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute top-16 sm:top-20 right-3 sm:right-5 glass rounded-2xl p-3 w-36 sm:w-44 animate-float"
+        className="absolute right-3 top-24 w-32 rounded-xl glass p-2.5 animate-float sm:right-5 sm:top-20 sm:w-44 sm:rounded-2xl sm:p-3"
       >
         <div className="text-[10px] font-mono text-muted-foreground">AI SIGNAL</div>
         <div className="flex items-center justify-between mt-1">
@@ -129,7 +129,7 @@ export function ChartViz() {
         <div className="mt-2 h-1.5 rounded-full bg-muted overflow-hidden">
           <div className="h-full bg-gradient-primary" style={{ width: "87%" }} />
         </div>
-        <div className="mt-2 text-[10px] text-muted-foreground">Target: 1.0890 · SL: 1.0820</div>
+        <div className="mt-2 text-[9px] text-muted-foreground sm:text-[10px]">Target: 1.0890 · SL: 1.0820</div>
       </motion.div>
     </div>
   );
