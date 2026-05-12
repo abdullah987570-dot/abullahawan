@@ -39,7 +39,7 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`relative rounded-3xl p-7 ${
+              className={`relative rounded-3xl p-6 sm:p-7 ${
                 t.featured
                   ? "glass border-primary/50 shadow-neon"
                   : "glass hover:border-primary/30"
@@ -53,7 +53,7 @@ export function Pricing() {
               <h3 className="font-display font-bold text-xl">{t.name}</h3>
               <p className="text-sm text-muted-foreground mt-1">{t.desc}</p>
               <div className="mt-5 flex items-baseline gap-1">
-                <span className="font-display text-5xl font-bold">{t.price}</span>
+                <span className="font-display text-4xl sm:text-5xl font-bold">{t.price}</span>
                 <span className="text-muted-foreground text-sm">/mo</span>
               </div>
               <button
