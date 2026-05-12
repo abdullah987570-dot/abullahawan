@@ -61,10 +61,10 @@ export function Courses() {
                   {c.p}
                 </span>
               </div>
-              <div className="p-5">
+              <div className="p-4 sm:p-5">
                 <div className="text-xs text-muted-foreground">{c.a}</div>
                 <h3 className="mt-1 font-display font-bold text-lg leading-snug">{c.t}</h3>
-                <div className="mt-4 flex items-center justify-between text-xs font-mono text-muted-foreground">
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-muted-foreground">
                   <span className="flex items-center gap-1">
                     <Star className="h-3.5 w-3.5 fill-primary text-primary" /> {c.r}
                   </span>
