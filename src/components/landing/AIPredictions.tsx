@@ -40,19 +40,19 @@ export function AIPredictions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.06 }}
-                className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-primary/40 transition"
+                className="glass group relative overflow-hidden rounded-2xl p-4 transition hover:border-primary/40 sm:p-6"
               >
                 <div
                   className="absolute -top-10 -right-10 h-32 w-32 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition"
                   style={{ background: color }}
                 />
-                <div className="relative flex items-center justify-between">
-                  <div>
+                <div className="relative flex items-start justify-between gap-3">
+                  <div className="min-w-0">
                     <div className="font-display font-bold text-lg">{p.pair}</div>
                     <div className="text-xs text-muted-foreground mt-0.5">{p.trend}</div>
                   </div>
                   <div
-                    className="flex items-center gap-1.5 font-mono text-sm font-bold px-3 py-1.5 rounded-lg"
+                    className="flex shrink-0 items-center gap-1.5 rounded-lg px-2.5 py-1.5 font-mono text-xs font-bold sm:px-3 sm:text-sm"
                     style={{
                       color,
                       background: `color-mix(in oklab, ${color} 18%, transparent)`,
