@@ -22,12 +22,12 @@ export function Nav() {
           <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
         </nav>
         <div className="flex items-center gap-3">
-          <button className="hidden sm:inline-flex text-sm text-muted-foreground hover:text-foreground transition">
+          <Link to="/auth" className="hidden sm:inline-flex text-sm text-muted-foreground hover:text-foreground transition">
             Sign in
-          </button>
-          <button className="whitespace-nowrap rounded-lg bg-gradient-primary px-3 py-2 text-xs font-semibold text-primary-foreground shadow-neon transition hover:opacity-90 sm:px-4 sm:text-sm">
+          </Link>
+          <Link to="/auth" className="whitespace-nowrap rounded-lg bg-gradient-primary px-3 py-2 text-xs font-semibold text-primary-foreground shadow-neon transition hover:opacity-90 sm:px-4 sm:text-sm">
             Get started
-          </button>
+          </Link>
         </div>
       </div>
     </header>
