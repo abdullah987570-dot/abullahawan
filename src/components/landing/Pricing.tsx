@@ -21,11 +21,11 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="pricing" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="text-xs font-mono text-primary tracking-widest">MEMBERSHIP</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             Trade <span className="text-gradient">smarter</span>, not harder
           </h2>
           <p className="mt-4 text-muted-foreground">Cancel anytime. Crypto, card and PayPal accepted.</p>
@@ -39,7 +39,7 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`relative rounded-3xl p-7 ${
+              className={`relative rounded-3xl p-6 sm:p-7 ${
                 t.featured
                   ? "glass border-primary/50 shadow-neon"
                   : "glass hover:border-primary/30"
@@ -53,7 +53,7 @@ export function Pricing() {
               <h3 className="font-display font-bold text-xl">{t.name}</h3>
               <p className="text-sm text-muted-foreground mt-1">{t.desc}</p>
               <div className="mt-5 flex items-baseline gap-1">
-                <span className="font-display text-5xl font-bold">{t.price}</span>
+                <span className="font-display text-4xl sm:text-5xl font-bold">{t.price}</span>
                 <span className="text-muted-foreground text-sm">/mo</span>
               </div>
               <button

@@ -28,11 +28,11 @@ const leaders = [
 
 export function Community() {
   return (
-    <section id="community" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="community" className="relative py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-12">
           <div className="text-xs font-mono text-primary tracking-widest">COMMUNITY</div>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             A live feed of <span className="text-gradient">trader minds</span>
           </h2>
         </div>
@@ -46,7 +46,7 @@ export function Community() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="glass rounded-2xl p-6 hover:border-primary/30 transition"
+                className="glass rounded-2xl p-4 sm:p-6 hover:border-primary/30 transition"
               >
                 <div className="flex items-start gap-3">
                   <div className="h-10 w-10 rounded-full bg-gradient-primary flex items-center justify-center font-bold text-primary-foreground">
@@ -66,14 +66,14 @@ export function Community() {
                       <span className="text-muted-foreground">{p.pair}</span>
                       <span style={{ color: p.side === "LONG" ? "var(--bull)" : "var(--bear)" }}>{p.side}</span>
                     </div>
-                    <div className="mt-4 flex items-center gap-6 text-sm text-muted-foreground">
+                    <div className="mt-4 flex items-center gap-4 sm:gap-6 text-sm text-muted-foreground">
                       <button className="flex items-center gap-1.5 hover:text-primary transition">
                         <Heart className="h-4 w-4" /> {p.likes}
                       </button>
                       <button className="flex items-center gap-1.5 hover:text-foreground transition">
                         <MessageCircle className="h-4 w-4" /> {p.comments}
                       </button>
-                      <button className="flex items-center gap-1.5 hover:text-foreground transition">
+                      <button className="hidden sm:flex items-center gap-1.5 hover:text-foreground transition">
                         <Repeat2 className="h-4 w-4" /> Repost
                       </button>
                     </div>
@@ -83,7 +83,7 @@ export function Community() {
             ))}
           </div>
 
-          <aside className="glass rounded-2xl p-6 h-fit sticky top-24">
+          <aside className="glass rounded-2xl p-5 sm:p-6 h-fit lg:sticky lg:top-24">
             <div className="flex items-center gap-2 mb-5">
               <Trophy className="h-4 w-4 text-primary" />
               <h3 className="font-display font-bold">Top analysts this week</h3>
