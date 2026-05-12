@@ -17,7 +17,7 @@ function Spark({ pts, up }: { pts: number[]; up: boolean }) {
   const pp = pts.map((p, i) => `${(i / (pts.length - 1)) * w},${h - ((p - min) / (max - min)) * h}`).join(" ");
   const color = up ? "var(--bull)" : "var(--bear)";
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="w-24 h-8">
+    <svg viewBox={`0 0 ${w} ${h}`} className="h-8 w-20 sm:w-24">
       <polyline fill="none" stroke={color} strokeWidth="1.5" points={pp} />
     </svg>
   );
@@ -27,7 +27,7 @@ export function MarketGrid() {
   return (
     <section id="market" className="relative py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="flex items-end justify-between mb-10">
+        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <div className="text-xs font-mono text-primary tracking-widest">LIVE MARKET</div>
             <h2 className="mt-2 font-display text-3xl sm:text-4xl md:text-5xl font-bold">Real-time forex dashboard</h2>
@@ -61,8 +61,8 @@ export function MarketGrid() {
                   {d.chg}
                 </span>
               </div>
-              <div className="mt-3 flex items-end justify-between">
-                <span className="font-mono text-2xl font-bold">{d.price}</span>
+              <div className="mt-3 flex items-end justify-between gap-3">
+                <span className="min-w-0 font-mono text-xl font-bold sm:text-2xl">{d.price}</span>
                 <Spark pts={d.spark} up={d.up} />
               </div>
             </motion.div>

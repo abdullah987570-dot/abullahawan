@@ -49,19 +49,19 @@ export function Community() {
                 className="glass rounded-2xl p-4 sm:p-6 hover:border-primary/30 transition"
               >
                 <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gradient-primary flex items-center justify-center font-bold text-primary-foreground">
+                  <div className="h-10 w-10 shrink-0 rounded-full bg-gradient-primary flex items-center justify-center font-bold text-primary-foreground">
                     {p.u[0]}
                   </div>
-                  <div className="flex-1">
+                  <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 flex-wrap">
                       <span className="font-bold">{p.u}</span>
                       {p.v && <BadgeCheck className="h-4 w-4 text-accent" />}
                       <span className="text-xs text-muted-foreground">{p.h} · {p.t}</span>
-                      <span className="ml-auto text-[10px] font-mono px-2 py-0.5 rounded bg-primary/15 text-primary">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-primary/15 text-primary sm:ml-auto">
                         {p.acc}% accuracy
                       </span>
                     </div>
-                    <p className="mt-2 text-foreground/90 text-[15px] leading-relaxed">{p.body}</p>
+                    <p className="mt-2 break-words text-[15px] leading-relaxed text-foreground/90">{p.body}</p>
                     <div className="mt-3 inline-flex items-center gap-2 text-xs font-mono px-2.5 py-1 rounded-md bg-muted/60">
                       <span className="text-muted-foreground">{p.pair}</span>
                       <span style={{ color: p.side === "LONG" ? "var(--bull)" : "var(--bear)" }}>{p.side}</span>

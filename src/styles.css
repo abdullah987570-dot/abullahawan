@@ -91,13 +91,17 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { color-scheme: dark; }
+  html {
+    color-scheme: dark;
+    overflow-x: clip;
+  }
   body {
     background: var(--gradient-hero);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
 }
 
