@@ -3,7 +3,15 @@ import { useState } from "react";
 import { Activity, Mail, Sparkles } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable";
 import { toast } from "sonner";
+
+async function handleGoogle() {
+  const result = await lovable.auth.signInWithOAuth("google", {
+    redirect_uri: window.location.origin,
+  });
+  if (result.error) toast.error(result.error.message ?? "Google sign-in failed");
+}
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
