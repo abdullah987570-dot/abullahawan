@@ -131,6 +131,7 @@ function AuthPage() {
                 By continuing you agree to our Terms & Privacy Policy.
               </p>
             </form>
+            </>
           )}
         </div>
 
