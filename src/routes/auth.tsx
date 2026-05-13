@@ -18,7 +18,10 @@ export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
       { title: "Sign in — ForexVision Pro" },
-      { name: "description", content: "Sign in to ForexVision Pro using a passwordless magic link." },
+      {
+        name: "description",
+        content: "Sign in to ForexVision Pro using a passwordless magic link.",
+      },
     ],
   }),
   component: AuthPage,
@@ -103,10 +106,14 @@ function AuthPage() {
               <Mail className="mx-auto mb-3 h-8 w-8 text-primary" />
               <h2 className="font-semibold">Check your inbox</h2>
               <p className="mt-1 text-sm text-muted-foreground break-words">
-                We sent a magic link to <span className="text-foreground">{email}</span>. Click the link to sign in.
+                We sent a magic link to <span className="text-foreground">{email}</span>. Click the
+                link to sign in.
               </p>
               <button
-                onClick={() => { setSent(false); setEmail(""); }}
+                onClick={() => {
+                  setSent(false);
+                  setEmail("");
+                }}
                 className="mt-4 text-xs text-primary hover:underline"
               >
                 Use a different email
@@ -114,52 +121,74 @@ function AuthPage() {
             </div>
           ) : (
             <>
-            <button
-              type="button"
-              onClick={handleGoogle}
-              className="mb-4 flex w-full items-center justify-center gap-2 rounded-lg border border-border/60 bg-background/60 px-4 py-2.5 text-sm font-medium transition hover:bg-background"
-            >
-              <svg className="h-4 w-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.07H2.18a11 11 0 0 0 0 9.86l3.66-2.83z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.83C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
-              Continue with Google
-            </button>
-            <div className="mb-4 flex items-center gap-3 text-xs text-muted-foreground">
-              <div className="h-px flex-1 bg-border/60" />or<div className="h-px flex-1 bg-border/60" />
-            </div>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                  Email address
-                </label>
-                <div className="relative">
-                  <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    placeholder="you@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-lg border border-border/60 bg-background/60 py-2.5 pl-10 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
-                  />
-                </div>
-              </div>
               <button
-                type="submit"
-                disabled={loading}
-                className="w-full rounded-lg bg-gradient-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-neon transition hover:opacity-90 disabled:opacity-60"
+                type="button"
+                onClick={handleGoogle}
+                className="mb-4 flex w-full items-center justify-center gap-2 rounded-lg border border-border/60 bg-background/60 px-4 py-2.5 text-sm font-medium transition hover:bg-background"
               >
-                {loading ? "Sending magic link…" : "Send magic link"}
+                <svg className="h-4 w-4" viewBox="0 0 24 24">
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.07H2.18a11 11 0 0 0 0 9.86l3.66-2.83z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.83C6.71 7.31 9.14 5.38 12 5.38z"
+                  />
+                </svg>
+                Continue with Google
               </button>
-              <p className="text-center text-xs text-muted-foreground">
-                By continuing you agree to our Terms & Privacy Policy.
-              </p>
-            </form>
+              <div className="mb-4 flex items-center gap-3 text-xs text-muted-foreground">
+                <div className="h-px flex-1 bg-border/60" />
+                or
+                <div className="h-px flex-1 bg-border/60" />
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium">
+                    Email address
+                  </label>
+                  <div className="relative">
+                    <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      placeholder="you@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full rounded-lg border border-border/60 bg-background/60 py-2.5 pl-10 pr-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full rounded-lg bg-gradient-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-neon transition hover:opacity-90 disabled:opacity-60"
+                >
+                  {loading ? "Sending magic link…" : "Send magic link"}
+                </button>
+                <p className="text-center text-xs text-muted-foreground">
+                  By continuing you agree to our Terms & Privacy Policy.
+                </p>
+              </form>
             </>
           )}
         </div>
 
-        <Link to="/" className="mt-6 text-xs text-muted-foreground hover:text-foreground transition">
+        <Link
+          to="/"
+          className="mt-6 text-xs text-muted-foreground hover:text-foreground transition"
+        >
           ← Back to home
         </Link>
       </div>
