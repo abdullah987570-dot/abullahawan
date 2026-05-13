@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Activity, Mail, Sparkles } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
 import { toast } from "sonner";
@@ -9,6 +9,7 @@ import { toast } from "sonner";
 async function handleGoogle() {
   const result = await lovable.auth.signInWithOAuth("google", {
     redirect_uri: window.location.origin,
+    extraParams: { prompt: "select_account" },
   });
   if (result.error) toast.error(result.error.message ?? "Google sign-in failed");
 }
@@ -24,25 +25,48 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if ((event === "SIGNED_IN" || event === "TOKEN_REFRESHED") && session) {
+        toast.success("Signed in successfully");
+        void navigate({ to: "/" });
+      }
+    });
+
+    void supabase.auth.getSession().then(({ data }) => {
+      if (data.session) void navigate({ to: "/" });
+    });
+
+    return () => subscription.unsubscribe();
+  }, [navigate]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: `${window.location.origin}/` },
-    });
-    setLoading(false);
-    if (error) {
-      toast.error(error.message);
-      return;
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email: email.trim(),
+        options: { emailRedirectTo: `${window.location.origin}/auth` },
+      });
+      if (error) {
+        toast.error(error.message);
+        return;
+      }
+      setSent(true);
+      toast.success("Magic link sent! Check your inbox.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not send magic link");
+    } finally {
+      setLoading(false);
     }
-    setSent(true);
-    toast.success("Magic link sent! Check your inbox.");
   }
 
   return (
