@@ -77,13 +77,16 @@ export function Courses() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {courses.map((c, i) => (
-            <motion.div
+            <motion.a
               key={c.t}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition"
+              className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition block"
             >
               <div className={`relative h-44 bg-gradient-to-br ${c.c} flex items-center justify-center`}>
                 <div className="absolute inset-0 grid-bg opacity-30" />
@@ -107,7 +110,7 @@ export function Courses() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
