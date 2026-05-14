@@ -5,6 +5,7 @@ import { TickerTape } from "@/components/landing/TickerTape";
 import { MarketGrid } from "@/components/landing/MarketGrid";
 import { AIPredictions } from "@/components/landing/AIPredictions";
 import { Courses } from "@/components/landing/Courses";
+import { Blog } from "@/components/landing/Blog";
 import { Community } from "@/components/landing/Community";
 import { Pricing } from "@/components/landing/Pricing";
 import { Footer } from "@/components/landing/Footer";
@@ -34,6 +35,7 @@ function Index() {
       <MarketGrid />
       <AIPredictions />
       <Courses />
+      <Blog />
       <Community />
       <Pricing />
       <Footer />
