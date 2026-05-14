@@ -4,12 +4,46 @@ import { Star, Users, PlayCircle } from "lucide-react";
 const cats = ["All", "Price Action", "Smart Money", "ICT", "Scalping", "Swing", "Risk Mgmt", "Gold", "Crypto"];
 
 const courses = [
-  { t: "Smart Money Concepts Mastery", a: "Liam Carter", r: 4.9, s: 12400, p: "$129", lvl: "Advanced", c: "from-emerald-500/30 to-teal-500/10" },
-  { t: "Price Action Foundations", a: "Maria Chen", r: 4.8, s: 28100, p: "Free", lvl: "Beginner", c: "from-blue-500/30 to-cyan-500/10" },
-  { t: "ICT Strategy Deep Dive", a: "Daniel Wolfe", r: 4.9, s: 9300, p: "$199", lvl: "Pro", c: "from-fuchsia-500/30 to-violet-500/10" },
-  { t: "Gold (XAU/USD) Sniper Setups", a: "Aisha Khan", r: 4.7, s: 6700, p: "$89", lvl: "Intermediate", c: "from-yellow-500/30 to-orange-500/10" },
-  { t: "Risk & Money Management", a: "Tomás Rivera", r: 4.9, s: 15200, p: "$59", lvl: "All levels", c: "from-pink-500/30 to-rose-500/10" },
-  { t: "Crypto Swing Trading 2025", a: "Yuki Tanaka", r: 4.8, s: 8800, p: "$149", lvl: "Intermediate", c: "from-indigo-500/30 to-blue-500/10" },
+  {
+    t: "SMC Full Course in Hindi | Smart Money Concepts Beginner to Pro",
+    a: "YouTube Mentor",
+    r: 4.9,
+    s: 12400,
+    p: "Free",
+    lvl: "Smart Money",
+    c: "from-emerald-500/30 to-teal-500/10",
+    url: "https://youtu.be/aqyXBYVtfkk?si=8KklRE48ZiSfpvL5",
+  },
+  {
+    t: "ICT Complete Course in Hindi | ICT Full Mentorship 2026",
+    a: "YouTube Mentor",
+    r: 4.9,
+    s: 9800,
+    p: "Free",
+    lvl: "ICT",
+    c: "from-fuchsia-500/30 to-violet-500/10",
+    url: "https://youtu.be/M5ccjwutWEY?si=92b-FM5D47ASYxbB",
+  },
+  {
+    t: "Ultimate Price Action Course — 3 Hours Non-stop",
+    a: "Trade with Purab",
+    r: 4.8,
+    s: 28100,
+    p: "Free",
+    lvl: "Price Action",
+    c: "from-blue-500/30 to-cyan-500/10",
+    url: "https://youtu.be/L2OochgcO3E?si=v0QzXTEJ5urE-JBW",
+  },
+  {
+    t: "Complete Risk Management in Trading 2026",
+    a: "YouTube Mentor",
+    r: 4.9,
+    s: 15200,
+    p: "Free",
+    lvl: "Risk Mgmt",
+    c: "from-pink-500/30 to-rose-500/10",
+    url: "https://youtu.be/Cw8OOUlzJHY?si=TVvh74MIgz40O_ja",
+  },
 ];
 
 export function Courses() {
@@ -43,13 +77,16 @@ export function Courses() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {courses.map((c, i) => (
-            <motion.div
+            <motion.a
               key={c.t}
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition"
+              className="group glass rounded-2xl overflow-hidden hover:border-primary/40 hover:-translate-y-1 transition block"
             >
               <div className={`relative h-44 bg-gradient-to-br ${c.c} flex items-center justify-center`}>
                 <div className="absolute inset-0 grid-bg opacity-30" />
@@ -73,7 +110,7 @@ export function Courses() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
